@@ -1,0 +1,54 @@
+
+<div class="main-wrapper"><div class="add-employee-wrapper">
+    <form #empData='ngForm' (ngSubmit)="addEmployee(empData)">
+        <mat-form-field>
+            <input matInput placeholder="First Name" name="firstName" ngModel>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Last Name" name="lastName" ngModel>
+        </mat-form-field>
+
+        <button mat-flat-button color="primary">AddEmployee</button>
+    </form>
+</div>
+<div class="employee-list">
+    <table lass="mat-elevation-z8">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let employee of employeeList;index as i">
+                <td>
+                    <p *ngIf="i !== rowIndex">{{employee.firstName}}</p>
+                    <input *ngIf=" rowIndex == i" type="text" [(ngModel)]="employee.firstName">
+                </td>
+                <td>
+                    <p *ngIf="i !== rowIndex">{{employee.lastName}}</p>
+                    <input *ngIf=" rowIndex == i" type="text" [(ngModel)]="employee.lastName">
+                </td>
+                <td><button *ngIf="i !== rowIndex" (click)="editEmployee(i)"><i class="material-icons">
+              edit
+            </i></button>
+                    <button *ngIf="i !== rowIndex" (click)="deleteEmployee(i)"><i class="material-icons">
+              delete
+            </i></button>
+                    <button *ngIf="i === rowIndex" (click)="confirmEmployee(i)"><i class="material-icons">
+              check_circle
+            </i></button>
+                    <button *ngIf="i === rowIndex" (click)="cancelEmployee(i)"><i class="material-icons">
+              cancel
+            </i></button>
+                </td>
+            </tr>
+            <tr *ngIf="employeeList == 0">
+                <p>No Records Found</p>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>

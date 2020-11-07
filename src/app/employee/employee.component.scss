@@ -1,0 +1,51 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.add-employee-wrapper {
+    padding: 10px 30px;
+    box-shadow: 0px 0px 7px 3px #eee;
+    background: #fff;
+    margin-bottom: 15px;
+}
+
+.employee-list {
+    box-shadow: 0px 0px 7px 3px #eee;
+    text-align: left;
+    background: #fff;
+}
+
+.employee-list thead {
+    background: gainsboro;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+.employee-list thead th{
+    padding: 10px;
+}
+
+.employee-list td {
+    padding: 10px;
+}
+table button:hover {
+    box-shadow: 1px 1px 1px 1px #eee;
+    transition: all 0.1s ease 0.1s;
+    cursor: pointer;
+}
+
+table button {
+    background: no-repeat;
+    border: none;
+    width: 30px;
+    height: 30px;
+    text-align: left;
+    vertical-align: middle;
+    padding: 3px;
+}
+.main-wrapper {
+    padding: 20px;
+}
